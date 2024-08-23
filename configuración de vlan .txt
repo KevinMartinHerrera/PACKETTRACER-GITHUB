@@ -1,0 +1,60 @@
+configuración de vlan 
+
+
+Switch>enable
+Switch#conf t 
+Enter configuration commands, one per line.  End with CNTL/Z.
+Switch(config)#vlan 10
+Switch(config-vlan)#name VLAN10
+Switch(config-vlan)#EXIT
+Switch(config)#vlan 20 
+Switch(config-vlan)#name VLAN20
+Switch(config-vlan)#EXIT
+Switch(config)#
+Switch(config)#vlan 30
+Switch(config-vlan)#name VLAN30
+Switch(config-vlan)#exit
+Switch(config)#
+Switch#
+
+configuración vlan 10, 20, 30
+
+Switch#conf t
+Enter configuration commands, one per line.  End with CNTL/Z.
+Switch(config)#inte
+Switch(config)#interface fast
+Switch(config)#interface fastEthernet 0/1
+Switch(config-if)#switc
+Switch(config-if)#switchport mode tru
+Switch(config-if)#switchport mode trunk 
+Switch(config-if)#swit
+Switch(config-if)#switchport trunk
+Switch(config-if)#switchport trunk allowed vl
+Switch(config-if)#switchport trunk allowed vlan 10,20,30
+Switch(config-if)#exit
+Switch(config)#interface fastEthernet 0/2
+Switch(config-if)#swit
+Switch(config-if)#switchport mod
+Switch(config-if)#switchport mode acc
+Switch(config-if)#switchport mode access 
+Switch(config-if)#switchport acce
+Switch(config-if)#switchport access vlan 10
+Switch(config-if)#exit
+Switch(config)#exit
+Switch#
+%SYS-5-CONFIG_I: Configured from console by console
+wr
+Building configuration...
+[OK]
+Switch#conf t
+Enter configuration commands, one per line.  End with CNTL/Z.
+Switch(config)#interface fastEthernet 0/3
+Switch(config-if)#switchport mode access 
+Switch(config-if)#switchport access vlan 20
+Switch(config-if)#exit
+Switch(config)#interface fastEthernet 0/4
+Switch(config-if)#switchport mode access 
+Switch(config-if)#switchport access vlan 30
+Switch(config-if)#
+%CDP-4-NATIVE_VLAN_MISMATCH: Native VLAN mismatch discovered on FastEthernet0/2 (10), with Switch FastEthernet0/1 (1).
+
